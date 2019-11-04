@@ -19,3 +19,9 @@ var todoList = {
     this.todos.splice(position, 1);
     this.displayTodos();
   },
+  toggleCompleted: function(position) { 
+    var todo = this.todos[position];
+    todo.completed = !todo.completed; // this will flip it to true or false, the opposite of what it is initially
+    this.displayTodos();
+  }
+};
