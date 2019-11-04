@@ -1,19 +1,18 @@
-
-function displayTodos() { // print current todos
-	console.log('My todos:', todos);
-}
-
-function addTodo(todo) { // todo is a new variable which your function will take
-	todos.push(todo); // the parameter of the function uses the variable at this point within the function
-	displayTodos; // shows your updated todos list after
-}
-
-function changeTodo(position, newValue) {
-	todos[position] = newValue; // choose which todo to update, then the value it should now be. Also note, position starts from 0 not 1
-	displayTodos(); // displays the todos after you update it
-}
-
-function deleteTodo(position) {
- 	todos.splice(position, 1); // position and 1 for number of items to delete
- 	displayTodos();
-}
+var todoList = {
+  todos: ['item 1', 'item 2', 'item 3'], // 1) todos array is in an object
+  displayTodos: function() { // has a displayTodos method
+    console.log('My Todos', this.todos);
+  },
+  addTodos: function(todo) { // has an addTodo method
+    this.todos.push(todo); // 'this' is added because you're referring the todoList object that this function is contained within
+    this.displayTodos(); 
+  },
+  changeTodo: function(position, newValue) { //has a changeTodo method
+    this.todos[position] = newValue;
+    this.displayTodos();
+  },
+  deleteTodo: function(position) {
+    this.todos.splice(position, 1);
+    this.displayTodos();
+  }
+};
