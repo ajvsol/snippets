@@ -1,18 +1,21 @@
 var todoList = {
-  todos: ['item 1', 'item 2', 'item 3'], // 1) todos array is in an object
-  displayTodos: function() { // has a displayTodos method
+  todos: [], // removed the simple text array
+  displayTodos: function() { 
     console.log('My Todos', this.todos);
   },
-  addTodos: function(todo) { // has an addTodo method
-    this.todos.push(todo); // 'this' is added because you're referring the todoList object that this function is contained within
+  addTodos: function(todoText) { 
+    this.todos.push({ // 'this' is added because you're referring the todoList object that this function is contained within. Swapped todo parameter for a method
+      todoText: todoText, // 1st one is the static property name, 2nd one is referring to the dynamic parameter for this method
+      completed: false
+    }); 
     this.displayTodos(); 
   },
-  changeTodo: function(position, newValue) { //has a changeTodo method
-    this.todos[position] = newValue;
+  changeTodo: function(position, todoText) { // more descriptive parameter name to use todoText than newValue
+    // this.todos[position] = newValue; // old version, new version can access the property rather than the whole object
+    this.todos[position].todoText = todoText
     this.displayTodos();
   },
-  deleteTodo: function(position) {
+  deleteTodo: function(position) { 
     this.todos.splice(position, 1);
     this.displayTodos();
-  }
-};
+  },
