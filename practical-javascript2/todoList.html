@@ -10,11 +10,23 @@
 
       console.log(todos); // 2.2) It should have a way to display todos
 
-      todos.push('Item 4'); // 2.3) It should have a way to add a todo
+      // 3.2 It should have a function to add a todo
+      function add(text) { 
+        todos.push(text);
+        console.log(todos);
+      }
 
-      todos[0] = 'Item 1 updated'; // 2.4) It should have a way to edit a todo
+      // 3.3) It should have a function to edit a todo
+      function edit(position, newValue) {
+      	todos[position] = newValue;
+	      console.log(todos);
+      }
 
-      todos.splice(0, 1); // 2.5) It should have a way to remove a todo
+      // 3.4) It should have a function to remove a todo
+      function remove(position) {
+        todos.splice(position, 1);
+        console.log(todos);
+      }
     </script>
   </body>
 </html>
