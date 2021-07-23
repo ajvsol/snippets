@@ -12,9 +12,12 @@
   </head>
   <body>
     <script>
+      // todos (expectation: undefined, 100% conf) (reality: undefined)
       var todos = ['Item 1', 'Item 2', 'Item 3']; // 2.1) It should have a place to store todos
+      // todos (expectation: Item 1, Item 2, Item 3) (reality: ["Item 1", "Item 2", "Item 3"])
 
       console.log(todos); // 2.2) It should have a way to display todos
+      // (expection: an array will be logged to the console, 100% conf) (reality: expectation true)
 
       // 3.2 It should have a function to add a todo
       function add(text) { 
