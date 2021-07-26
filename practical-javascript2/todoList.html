@@ -12,29 +12,30 @@
   </head>
   <body>
     <script>
-      // todos (expectation: undefined, 100% conf) (reality: undefined)
-      var todos = ['Item 1', 'Item 2', 'Item 3']; // 2.1) It should have a place to store todos
-      // todos (expectation: Item 1, Item 2, Item 3) (reality: ["Item 1", "Item 2", "Item 3"])
+      // 2.1) It should have a place to store todos
+      var todos = ['Item 1', 'Item 2', 'Item 3']; 
 
-      console.log(todos); // 2.2) It should have a way to display todos
-      // (expection: an array will be logged to the console, 100% conf) (reality: expectation true)
-
+      // 2.2) It should have a way to display todos
+      function display() {
+        console.log('My todos:', todos);
+      }
+      
       // 3.2 It should have a function to add a todo
       function add(text) { 
         todos.push(text);
-        console.log(todos);
+        display();
       }
 
       // 3.3) It should have a function to edit a todo
       function edit(position, newValue) {
       	todos[position] = newValue;
-	      console.log(todos);
+	      display();
       }
 
       // 3.4) It should have a function to remove a todo
       function remove(position) {
         todos.splice(position, 1);
-        console.log(todos);
+        display()
       }
     </script>
   </body>
