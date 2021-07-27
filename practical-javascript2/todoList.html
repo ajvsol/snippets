@@ -12,13 +12,19 @@
   </head>
   <body>
     <script>
-      // 2.1) It should have a place to store todos
-      var todos = ['Item 1', 'Item 2', 'Item 3']; 
+      // 6.9) We should initialise the todos variable with objects
+      var todos = [
+        {todoText: 'Item 1', completed: false},
+        {todoText: 'Item 2', completed: false},
+        {todoText: 'Item 3', completed: false}
+      ];
 
       // 2.2) It should have a way to display todos
+      console.log(todos)
+      /*
       function display() {
         console.log('My todos:', todos);
-      }
+      } */
       
       // 3.2 It should have a function to add a todo
       function add(text) { 
@@ -35,7 +41,7 @@
       // 3.4) It should have a function to remove a todo
       function remove(position) {
         todos.splice(position, 1);
-        display()
+        display();
       }
     </script>
   </body>

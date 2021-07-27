@@ -1,3 +1,9 @@
+Version 3
+[x] We should initialise the todos variable with objects
+[ ] The add function should add objects
+[ ] The edit function should edit objects
+[ ] It should have a function to toggle a todo
+
 Version 2
 [x] It should have a function to add a todo
 [x] It should have a function to edit a todo
