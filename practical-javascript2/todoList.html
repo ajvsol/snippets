@@ -20,17 +20,17 @@
       ];
 
       // 2.2) It should have a way to display todos
-      console.log(todos)
-      /*
-      function display() {
-        console.log('My todos:', todos);
-      } */
-      
-      // 3.2 It should have a function to add a todo
-      function add(text) { 
-        todos.push(text);
-        display();
+      console.log(todos);
+      // function display() {
+      //   console.log('My todos:', todos);
+      // } 
+
+      // 6.11) The add function should add objects
+      function add(initialText) { 
+        todos.push({todoText: initialText, completed: false});
+        display(); //console.log(todos);
       }
+
 
       // 3.3) It should have a function to edit a todo
       function edit(position, newValue) {
