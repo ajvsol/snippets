@@ -28,20 +28,20 @@
       // 6.11) The add function should add objects
       function add(initialText) { 
         todos.push({todoText: initialText, completed: false});
-        display(); //console.log(todos);
+        console.log(todos);
       }
 
-
-      // 3.3) It should have a function to edit a todo
-      function edit(position, newValue) {
-      	todos[position] = newValue;
-	      display();
+      // 6.12) The edit function should edit objects
+      function edit(position, newTodoText) {
+      	todos[position].todoText = newTodoText;
+	      console.log(todos);
       }
+
 
       // 3.4) It should have a function to remove a todo
       function remove(position) {
         todos.splice(position, 1);
-        display();
+        console.log(todos);
       }
     </script>
   </body>

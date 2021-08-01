@@ -1,7 +1,7 @@
 Version 3
 [x] We should initialise the todos variable with objects
 [x] The add function should add objects
-[ ] The edit function should edit objects
+[x] The edit function should edit objects
 [ ] It should have a function to toggle a todo
 
 Version 2
