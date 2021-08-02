@@ -37,10 +37,20 @@
 	      console.log(todos);
       }
 
-
       // 3.4) It should have a function to remove a todo
       function remove(position) {
         todos.splice(position, 1);
+        console.log(todos);
+      }
+
+      // 7) It should have a function to toggle a todo
+      function toggle(position) {
+        if (todos[position].completed === true) {
+          todos[position].completed = false;
+        }
+        else {
+          todos[position].completed = true;
+        }
         console.log(todos);
       }
     </script>
