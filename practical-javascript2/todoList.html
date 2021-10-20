@@ -19,39 +19,37 @@
         {todoText: 'Item 3', completed: false}
       ];
 
-      // 2.2) It should have a way to display todos
-      console.log(todos);
-      // function display() {
-      //   console.log('My todos:', todos);
-      // } 
-
       // 6.11) The add function should add objects
       function add(initialText) { 
         todos.push({todoText: initialText, completed: false});
-        console.log(todos);
+        displayTodos();
       }
 
       // 6.12) The edit function should edit objects
       function edit(position, newTodoText) {
       	todos[position].todoText = newTodoText;
-	      console.log(todos);
+	      displayTodos();
       }
 
       // 3.4) It should have a function to remove a todo
       function remove(position) {
         todos.splice(position, 1);
-        console.log(todos);
+        displayTodos();
       }
 
       // 7) It should have a function to toggle a todo
       function toggle(position) {
         if (todos[position].completed === true) {
           todos[position].completed = false;
-        }
-        else {
+        } else {
           todos[position].completed = true;
         }
-        console.log(todos);
+        displayTodos();
+      }
+
+      // 9.4) It should have a way to display todos
+      function displayTodos() {
+        console.log('My todos:', todos);
       }
     </script>
   </body>
