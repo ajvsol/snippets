@@ -53,6 +53,31 @@
           console.log(todos[i]);
         }
       }
+
+      function toggleAll() {
+        var completedTodos = 0; // storing completed todos as an easy way to evaluate whether everything is true
+
+        for (var i = 0; i < todos.length; i++) {
+          if (todos[i].completed === true) {
+            completedTodos++;
+          }
+        }
+        // if (everything is true)
+        if (completedTodos === todos.length) {
+        //   then change everything to false    
+          for (var i = 0; i < todos.length; i++) {
+            todos[i].completed = false;
+        }
+        // if otherwise
+        } else {
+        //   then change everything to true
+          for (var i = 0; i < todos.length; i++) {
+            todos[i].completed = true;
+          }
+        }
+
+        displayTodos();
+      }
     </script>
   </body>
 </html>
