@@ -1,8 +1,12 @@
+Version 7
+[x] It should have a displayTodos button.
+[] The displayTodos should run the displayTodos function. 
+
 Version 6
 [x] It should have a function for toggling all todos.
-[] If everything is false, then change everything to true.
-[] If everything is true, then change everything to false.
-[] If mixed, then change everything to true.
+[x] If everything is false, then change everything to true.
+[x] If everything is true, then change everything to false.
+[x] If mixed, then change everything to true.
 
 Version 5
 [x] It should have a function for displaying todos.
