@@ -11,7 +11,7 @@
     </style>
   </head>
   <body>
-    <button>Display todos</button>
+    <button id='display-todos-button'>Display todos</button>
     <script>
       // 6.9) We should initialise the todos variable with objects
       var todos = [
@@ -78,6 +78,10 @@
         }
 
         displayTodos();
+
+        // 11.5) The displayTodos button should run the displayTodos function. 
+        var displayTodosButton = document.getElementById('display-todos-button');
+        displayTodosButton.addEventListener('click', displayTodos);
       }
     </script>
   </body>

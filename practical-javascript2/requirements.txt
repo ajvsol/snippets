@@ -1,6 +1,6 @@
 Version 7
 [x] It should have a displayTodos button.
-[] The displayTodos should run the displayTodos function. 
+[x] The displayTodos button should run the displayTodos function. 
 
 Version 6
 [x] It should have a function for toggling all todos.
