@@ -16,6 +16,13 @@
     <button id='toggle-all-button'>Toggle all</button>
     <button id='add-button'>Add</button>
     <input id='add-input'>
+    <button id='edit-button'>Edit</button>
+    <input id='edit-position-input'>
+    <input id='edit-text-input'>
+    <button id='remove-button'>Remove</button>
+    <input id='remove-input'>
+    <button id='toggle-button'>Toggle</button>
+    <input id='toggle-input'>
     <script>
       // 6.9) We should initialise the todos variable with objects
       var todos = [
@@ -24,12 +31,7 @@
         {todoText: 'Item 3', completed: false}
       ];
 
-      // 6.11) The add function should add objects
-      // function add(initialText) { 
-      //   todos.push({todoText: initialText, completed: false});
-      //   displayTodos();
-      // }
-
+      // 13.4) There should be a working button for adding a todo.
       function add() { 
         var initialText = addInput.value;
         todos.push({todoText: initialText, completed: false});
@@ -37,26 +39,34 @@
         addInput.value = '';
       }
 
-      // 6.12) The edit function should edit objects
-      function edit(position, newTodoText) {
+      // 13.5) There should be a working button for editing a todo.
+      function edit() {
+        var position = editPositionInput.value;
+        var newTodoText = editTextInput.value;
       	todos[position].todoText = newTodoText;
 	      displayTodos();
+        editPositionInput.value = '';
+        editTextInput.value = '';
       }
 
-      // 3.4) It should have a function to remove a todo
-      function remove(position) {
+      // 13.6) There should be a working button for removing a todo.
+      function remove() {
+        var position = removeInput.value;
         todos.splice(position, 1);
         displayTodos();
+        removeInput.value = '';
       }
 
-      // 7) It should have a function to toggle a todo
-      function toggle(position) {
+      // 13.7) There should be a working button for toggling a todo.
+      function toggle() {
+        var position = toggleInput.value;
         if (todos[position].completed === true) {
           todos[position].completed = false;
         } else {
           todos[position].completed = true;
         }
         displayTodos();
+        toggleInput.value = '';
       }
 
       // 9.6) It should have a way to display todos
@@ -99,11 +109,26 @@
       var toggleAllButton = document.getElementById('toggle-all-button');
       toggleAllButton.addEventListener('click', toggleAll);
 
-      // 13.2) There should be a working button for adding a todo.
+      // 13.4) There should be a working button for adding a todo.
       var addButton = document.getElementById('add-button');
       var addInput = document.getElementById('add-input');
       addButton.addEventListener('click', add);
 
+      // 13.5) There should be a working button for editing a todo.
+      var editButton = document.getElementById('edit-button');
+      var editPositionInput = document.getElementById('edit-position-input');
+      var editTextInput = document.getElementById('edit-text-input');
+      editButton.addEventListener('click', edit);
+
+      // 13.6) There should be a working button for removing a todo.
+      var removeButton = document.getElementById('remove-button');
+      var removeInput = document.getElementById('remove-input');
+      removeButton.addEventListener('click', remove);
+
+      // 13.7) There should be a working button for toggling a todo.
+      var toggleButton = document.getElementById('toggle-button');
+      var toggleInput = document.getElementById('toggle-input');
+      toggleButton.addEventListener('click', toggle);
     </script>
   </body>
 </html>
