@@ -10,8 +10,12 @@
       }
     </style>
   </head>
+
   <body>
     <button id='display-todos-button'>Display todos</button>
+    <button id='toggle-all-button'>Toggle all</button>
+    <button id='add-button'>Add</button>
+    <input id='add-input'>
     <script>
       // 6.9) We should initialise the todos variable with objects
       var todos = [
@@ -21,9 +25,16 @@
       ];
 
       // 6.11) The add function should add objects
-      function add(initialText) { 
+      // function add(initialText) { 
+      //   todos.push({todoText: initialText, completed: false});
+      //   displayTodos();
+      // }
+
+      function add() { 
+        var initialText = addInput.value;
         todos.push({todoText: initialText, completed: false});
         displayTodos();
+        addInput.value = '';
       }
 
       // 6.12) The edit function should edit objects
@@ -87,6 +98,12 @@
       // 11.7) The toggleAll button should run the toggleAll function. 
       var toggleAllButton = document.getElementById('toggle-all-button');
       toggleAllButton.addEventListener('click', toggleAll);
+
+      // 13.2) There should be a working button for adding a todo.
+      var addButton = document.getElementById('add-button');
+      var addInput = document.getElementById('add-input');
+      addButton.addEventListener('click', add);
+
     </script>
   </body>
 </html>
