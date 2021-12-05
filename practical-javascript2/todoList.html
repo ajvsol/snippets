@@ -23,6 +23,11 @@
     <input id='remove-input'>
     <button id='toggle-button'>Toggle</button>
     <input id='toggle-input'>
+
+    <ul id='todo-list-ul'>
+      
+    </ul>
+
     <script>
       // 6.9) We should initialise the todos variable with objects
       var todos = [
@@ -69,10 +74,17 @@
         toggleInput.value = '';
       }
 
-      // 9.6) It should have a way to display todos
+      // 14) Creating a bullet point list to display todos
       function displayTodos() {
+        var todosUl = document.getElementById('todos-ul'); //select the <ul> element by it's ID
+
+        todos.Ul.innerHTML = ''; //clears any existing <li> elements inside of todosUl by setting it as an empty string
+
         for (var i = 0; i < todos.length; i++) {
-          console.log(todos[i]);
+          var todoLi = document.createElement('li'); // this var will create <li> element when used
+          todosUl.appendChild(todoLi); // create <li> as a child of todoListUl
+
+          todoLi.innerText = todos[i].todoText; // set the <li> visible text to the todo item's todoText
         }
       }
 
