@@ -74,7 +74,7 @@
         toggleInput.value = '';
       }
 
-      // 14) Creating a bullet point list to display todos
+      // 14.7) Creating a bullet point list to display todos
       function displayTodos() {
         var todosUl = document.getElementById('todos-ul'); //select the <ul> element by it's ID
 
@@ -82,9 +82,14 @@
 
         for (var i = 0; i < todos.length; i++) {
           var todoLi = document.createElement('li'); // this var will create <li> element when used
-          todosUl.appendChild(todoLi); // create <li> as a child of todoListUl
 
-          todoLi.innerText = todos[i].todoText; // set the <li> visible text to the todo item's todoText
+          if (todos[i].completed === true) { // set the <li> visible text to the todo item's todoText + completed status
+            todoLi.innerText = '[X] ' + todos[i].todoText;
+          } else {
+            todoLi.innerText = '[ ] ' + todos[i].todoText;
+          }
+        
+          todosUl.appendChild(todoLi); // create <li> as a child of todoListUl
         }
       }
 
