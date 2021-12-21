@@ -18,14 +18,12 @@
     <button id='edit-button'>Edit</button>
     <input id='edit-position-input'>
     <input id='edit-text-input'>
-    <button id='remove-button'>Remove</button>
-    <input id='remove-input'>
+    <!-- <button id='remove-button'>Remove</button>
+    <input id='remove-input'> -->
     <button id='toggle-button'>Toggle</button>
     <input id='toggle-input'>
 
-    <ul id='todo-list-ul'>
-      
-    </ul>
+    <ul id='todos-ul'></ul>
 
     <script>
       // 6.9) We should initialise the todos variable with objects
@@ -54,11 +52,22 @@
       }
 
       // 13.6) There should be a working button for removing a todo.
-      function remove() {
-        var position = removeInput.value;
+      // function remove() {
+      //   var position = removeInput.value;
+      //   todos.splice(position, 1);
+      //   displayTodos();
+      //   removeInput.value = '';
+      // }
+      function remove(event) {
+
+        var position = $0.id;
         todos.splice(position, 1);
-        displayTodos();
-        removeInput.value = '';
+
+        event.target.id = event.target; // set the id of the button element to be that of the button itself
+        var whichButton = event.target.id;
+        todos.splice(whichButton, 1);
+
+        event.target.parentElement.childNodes
       }
 
       // 13.7) There should be a working button for toggling a todo.
@@ -74,10 +83,10 @@
       }
 
       // 14.7) Creating a bullet point list to display todos
+      // 15.2) Each todo should have it's own remove button.
       function displayTodos() {
         var todosUl = document.getElementById('todos-ul'); //select the <ul> element by it's ID
-
-        todos.Ul.innerHTML = ''; //clears any existing <li> elements inside of todosUl by setting it as an empty string
+        todosUl.innerHTML = ''; //clears any existing <li> elements inside of todosUl by setting it as an empty string
 
         for (var i = 0; i < todos.length; i++) {
           var todoLi = document.createElement('li'); // this var will create <li> element when used
@@ -88,6 +97,14 @@
             todoLi.innerText = '[ ] ' + todos[i].todoText;
           }
         
+          // 15.2) Each todo should have it's own remove button.
+          var removeButton = document.createElement('button'); // this var will create <button> element when used
+          removeButton.innerText = 'Remove'; // label
+
+          removeButton.addEventListener('click', remove);
+          
+          todoLi.appendChild(removeButton); // have the button appear in each <li>
+          
           todosUl.appendChild(todoLi); // create <li> as a child of todoListUl
         }
       }
@@ -133,14 +150,16 @@
       editButton.addEventListener('click', edit);
 
       // 13.6) There should be a working button for removing a todo.
-      var removeButton = document.getElementById('remove-button');
-      var removeInput = document.getElementById('remove-input');
-      removeButton.addEventListener('click', remove);
+      // var removeButton = document.getElementById('remove-button');
+      // var removeInput = document.getElementById('remove-input');
+      // removeButton.addEventListener('click', remove);
 
       // 13.7) There should be a working button for toggling a todo.
       var toggleButton = document.getElementById('toggle-button');
       var toggleInput = document.getElementById('toggle-input');
       toggleButton.addEventListener('click', toggle);
+
+      displayTodos();
     </script>
   </body>
 </html>
