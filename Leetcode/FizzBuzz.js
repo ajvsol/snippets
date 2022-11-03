@@ -22,3 +22,22 @@ function fizzbuzz(integer) {
     }
     return answer;
 }
+
+// Version that takes in an array of numbers
+function FizzBuzzifier(array) {
+    let answer = [];
+    for (let i = 0; i < array.length; i++) {
+        console.log(`Loop number ${i}`)
+        if ((array[i] % 3 === 0) && (array[i] % 5 === 0)) {
+            answer.push('FizzBuzz')
+        } else if (array[i] % 3 === 0) {
+            answer.push('Fizz') 
+        } else if (array[i] % 5 === 0) {
+            answer.push('Buzz') 
+        } else {
+            answer.push(array[i])
+        }
+    }
+    console.log(`answer:`, answer);
+    return answer;
+}
