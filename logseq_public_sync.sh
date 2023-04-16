@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Set the environment variables explicitly (for cron use)
+export VAULT1="/home/boss/Vaults/gocryptfs1"
+export MY_REPOS="/home/boss/Documents/Git/1MY_REPOS"
+
 # Set the source and destination directories
 SRC_DIR="$VAULT1/Android-sync/Android-ATHENAEUM/Logseq/logseq-coding2/pages"
 DEST_DIR="$MY_REPOS/public-notes"
@@ -9,6 +13,7 @@ FILE1="JavaScript.md"
 FILE2="CodeWars - JavaScript.md"
 FILE3="LeetCode - JavaScript.md"
 FILE4="Currently_studying.md"
+FILE5="C#.md"
 
 # Change to the destination directory
 cd $DEST_DIR
@@ -19,9 +24,10 @@ rsync -av $SRC_DIR/$FILE1 $DEST_DIR/
 rsync -av "$SRC_DIR/$FILE2" "$DEST_DIR/"
 rsync -av "$SRC_DIR/$FILE3" "$DEST_DIR/"
 rsync -av $SRC_DIR/$FILE4 $DEST_DIR/
+rsync -av $SRC_DIR/$FILE5 $DEST_DIR/
 
 # Check if there are any changes
-if [[ $(git diff --name-only $FILE1 "$FILE2" "$FILE3" $FILE4 ) ]]; then
+if [[ $(git diff --name-only $FILE1 "$FILE2" "$FILE3" $FILE4 $FILE5 ) ]]; then
 
     # Get the current date and time
     DATE=$(date +"%Y-%m-%d %H:%M:%S")
