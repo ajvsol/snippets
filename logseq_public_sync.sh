@@ -13,7 +13,7 @@ FILE1="JavaScript.md"
 FILE2="CodeWars - JavaScript.md"
 FILE3="LeetCode - JavaScript.md"
 FILE4="Currently_studying.md"
-FILE5="C#.md"
+FILE5="C%23.md"
 
 # Change to the destination directory
 cd $DEST_DIR
